@@ -135,6 +135,15 @@ STORAGES = {
         "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
     },
 }
+# Ensure Django searches both the app directories and explicit static folders
+STATICFILES_FINDERS = [
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder', # Looks inside blog/static/
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+]
+
+# If you have a global static folder at the root level, include it here.
+# Otherwise, leave this list empty so it relies on AppDirectoriesFinder.
+STATICFILES_DIRS = []
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
