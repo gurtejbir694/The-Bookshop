@@ -25,9 +25,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-rnsda+-1a_5=q7@!2q+!4mdz-^rru0fv@x)948d6#_+ly_@_cz')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get('DEBUG', 'True') == True
+DEBUG = os.environ.get('DEBUG', 'True').lower() in ['true', '1']
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1' 'the-bookshop.onrender.com' '.onrender.com']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'the-bookshop.onrender.com', '.onrender.com']
 
 
 # Application definition
